@@ -225,11 +225,25 @@ class Product ():
     def update_price(self, price): #>> supposed to add prices to the items
         self.price = price
 
+        # Class Method
+    def list_products(cls):
+        return cls.Tally
+
     def __repr__(self) -> str:
-        return f' <product {self.name}>' #>> prints the product name 
+        return f' <This product is {self.name}>' #>> prints the product name 
     
 bread = Product('Bread', 65)
 milk = Product('Milk', 60)
+
+
+# Static method
+def calculate_tax(price):
+    return price*0.16
+
+#Instance method
+def total_plus_vat(self):
+    return self.price+calculate_tax(self.price)
+
 
 print(bread)
 print(milk)
@@ -237,7 +251,8 @@ print(milk)
 print(Product.Tally)
 print(bread.price)
 milk.update_price(100)
-print(milk.price)
+print(milk.price) 
+
 
 
 
