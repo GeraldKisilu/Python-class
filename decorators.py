@@ -1,4 +1,6 @@
 # Decorators
+
+from .decorators import timed_greet
 def timed_greet(fn):
     def wrapper(*args, **kwargs):
         print('Good Morning!')
